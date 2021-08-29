@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic javascript</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/calculator.css">
+</head>
+
+<body>
+  <div><cite>Pulsa en el menú de tabuladores para ir al ejercicio que te interese ver.</cite></div>
+  <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTabs(event, 'ejer-1')">Ejer-1</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-2')">Ejer-2</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-3')">Ejer-3</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-4')">Ejer-4</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-5')">Ejer-5</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-6')">Ejer-6</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-7')">Ejer-7</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-8-N2')">Ejer_8_+_N2</button>
+    <button class="tablinks" onclick="openTabs(event, 'ejer-8-N3')">Ejer-8 N2_N3</button>
+  </div>
+
+  
+  <!-- Tab content -->
+  <div id="ejer-1" class="tabcontent">
+    <h3>ejer-1</h3>
+    <p>Hola Mundo por consola</p>
+    <input type="button" value="Ejecutar" onclick="helloword()">
+
+  </div>
+
+  <div id="ejer-2" class="tabcontent">
+    <h3>ejer-2</h3>
+    <p>Mostrar alert</p>
+    <input type="button" value="Ejecutar" onclick="showalert()">
+  </div>
+
+  <div id="ejer-3" class="tabcontent">
+    <h3>ejer-3</h3>
+    <p>Mostrar por consola nombre + apellido</p>
+    <input type="button" value="Ejecutar" onclick="showname()">
+  </div>
+
+  <div id="ejer-4" class="tabcontent">
+    <h3>ejer-4</h3>
+    <p>sumar dos números</p>
+    <input type="button" value="Ejecutar" onclick="sum()">
+  </div>
+
+  <div id="ejer-5" class="tabcontent">
+    <h3>ejer-5</h3>
+    <p>¿He aprobado el exámen?</p>
+    <form name="form_nota">
+      <label for="quantity">Introduce la nota (entre 0 y 10):</label>
+      <input type="number" id="quantity" name="quantity" min="0" max="10" step="0.25">
+      <input type="button" value="Comprobar" onclick="return checkresult()">
+    </form>
+  </div>
+
+  <div id="ejer-6" class="tabcontent">
+    <h3>ejer-6</h3>
+    <p>Reemplazar "blau" por "verd"</p>
+    <p>Reemplazar "o" por "u"</p>
+    <input type="button" value="Ejecutar" onclick="ejer6();">
+
+  </div>
+
+  <div id="ejer-7" class="tabcontent">
+    <h3>ejer-7</h3>
+    <p>listar por consola un array</p>
+    <input type="button" value="Ejecutar" onclick="showposition();">
+
+  </div>
+
+  <div id="ejer-8-N2" class="tabcontent">
+    <h3>ejer-8</h3>
+    <h4>calculadora simple</h4>
+    <form>
+      <div class="digits">
+        <label for="value1">Numerador#1:</label>
+        <input type="number" id="value1" name="value1" value="0" required>
+        <label for="value2">Numerador#2:</label>
+        <input type="number" id="value2" name="value2" value="0" required>
+      </div>
+      <div class="operators">
+        <input class="btncalc" type="submit" value="SUMAR"
+          onclick="calculadora('+',this.form.value1.value,this.form.value2.value);">
+        <input class="btncalc" type="submit" value="RESTAR"
+          onclick="calculadora('-',this.form.value1.value,this.form.value2.value);">
+        <input class="btncalc" type="submit" value="MULTIPLICAR"
+          onclick="calculadora('*',this.form.value1.value,this.form.value2.value);">
+        <input class="btncalc" type="submit" value="DIVIDIR"
+          onclick="calculadora('/',this.form.value1.value,this.form.value2.value);">
+      </div>
+    </form>
+    <div class="result">
+      <p id="result"></p>
+    </div>
+  </div>
+
+
+  <div id="ejer-8-N3" class="tabcontent">
+    <h3>ejer-8 N3</h3>
+    <p>calculadora con UI</p>
+    <div id="calculator">
+      <section class="display">
+        <h3 id="input" class="top">0</h3>
+        <h1 id="display" class="bottom">0</h1>
+      </section>
+      <section id="keypad">
+          <button id="clear" onclick="handleClick('AC')">AC</button>
+          <button id="backspace" onclick="handleClick('backspace')">&lt;=</button>
+          <button id="divide" onclick="handleClick('/')">/</button>
+          <button id="seven" onclick="handleClick(7)">7</button>
+          <button id="eight" onclick="handleClick(8)">8</button>
+          <button id="nine" onclick="handleClick(9)">9</button>
+          <button id="multiply" onclick="handleClick('*')">*</button>
+          <button id="four" onclick="handleClick(4)">4</button>
+          <button id="five" onclick="handleClick(5)">5</button>
+          <button id="six" onclick="handleClick(6)">6</button>
+          <button id="subtract" onclick="handleClick('-')">-</button>
+          <button id="one" onclick="handleClick(1)">1</button>
+          <button id="two" onclick="handleClick(2)">2</button>
+          <button id="three" onclick="handleClick(3)">3</button>
+          <button id="add" onclick="handleClick('+')">+</button>
+          <button id="zero" onclick="handleClick(0)">0</button>
+          <button id="decimal" onclick="handleClick('.')">.</button>
+          <button id="equals" onclick="handleClick('=')">=</button>
+         
+      </section>
+    </div> 
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
+</body>
+
+</html>
